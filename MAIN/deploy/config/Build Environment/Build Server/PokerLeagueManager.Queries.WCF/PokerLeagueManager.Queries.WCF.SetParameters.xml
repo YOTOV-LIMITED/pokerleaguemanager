@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <setParameter name="IIS Web Application Name" value="Build Web Site/PokerLeagueManager.Queries.WCF" />
+  <setParameter name="default-Web.config Connection String" value="Data Source=localhost\BUILD;Initial Catalog=PokerLeagueManager.DB.QueryStore;Integrated Security=True;Pooling=False" />
+</parameters>

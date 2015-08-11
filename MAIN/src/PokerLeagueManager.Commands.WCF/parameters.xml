@@ -1,0 +1,20 @@
+<parameters>
+  <parameter name="QueryService Endpoint Address"
+             description="URL for the QueryService"
+             defaultValue="http://contoso.com/WebService1.asmx"
+             tags="">
+    <parameterEntry
+      kind="XmlFile"
+      scope="obj\\Debug\\Package\\PackageTmp\\Web\.config$"
+      match="/configuration/system.serviceModel/client/endpoint[@name='BasicHttpBinding_IQueryService']/@address" />
+  </parameter>
+  <parameter name="EventService Endpoint Address"
+             description="URL for the EventService"
+             defaultValue="http://contoso.com/WebService1.asmx"
+             tags="">
+    <parameterEntry
+      kind="XmlFile"
+      scope="obj\\Debug\\Package\\PackageTmp\\Web\.config$"
+      match="/configuration/system.serviceModel/client/endpoint[@name='BasicHttpBinding_IEventService']/@address" />
+  </parameter>
+</parameters>

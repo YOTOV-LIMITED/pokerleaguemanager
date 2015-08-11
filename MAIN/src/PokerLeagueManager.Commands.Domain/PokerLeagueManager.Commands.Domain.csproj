@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D702BDB7-9F99-4509-82AF-632689AFF7D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PokerLeagueManager.Commands.Domain</RootNamespace>
+    <AssemblyName>PokerLeagueManager.Commands.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\PokerLeagueManager.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisTreatWarningsAsErrors>True</CodeAnalysisTreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Unity 3.0\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aggregates\Game\Exceptions\DuplicatePlayerNameException.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\PayinMustBeGreaterThanZeroException.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\PlayerNameMustNotBeBlankException.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\PlacingMustBeGreaterThanZeroException.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\InvalidGameDateException.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\WinningsDoesNotEqualPayInsException.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\WinningsCannotBeNegativeException.cs" />
+    <Compile Include="Aggregates\Game\Game.cs" />
+    <Compile Include="Aggregates\Game\Player.cs" />
+    <Compile Include="CommandHandlers\RenamePlayerCommandHandler.cs" />
+    <Compile Include="CommandHandlers\DeleteGameCommandHandler.cs" />
+    <Compile Include="CommandHandlers\EnterGameResultsHandler.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\GameWithNotEnoughPlayersException.cs" />
+    <Compile Include="Infrastructure\CommandRepository.cs" />
+    <Compile Include="Infrastructure\Exceptions\UnableToAcquireAggregateLockException.cs" />
+    <Compile Include="Infrastructure\Exceptions\OptimisticConcurrencyException.cs" />
+    <Compile Include="Aggregates\Game\Exceptions\PlayerPlacingsNotInOrderException.cs" />
+    <Compile Include="Infrastructure\Exceptions\PublishEventFailedException.cs" />
+    <Compile Include="Infrastructure\BaseAggregateRoot.cs" />
+    <Compile Include="Infrastructure\BaseCommandHandler.cs" />
+    <Compile Include="Infrastructure\Bootstrapper.cs" />
+    <Compile Include="Infrastructure\CommandHandlerFactory.cs" />
+    <Compile Include="Infrastructure\EventRepository.cs" />
+    <Compile Include="Infrastructure\EventServiceProxy.cs" />
+    <Compile Include="Infrastructure\EventServiceProxyFactory.cs" />
+    <Compile Include="Infrastructure\IAggregateRoot.cs" />
+    <Compile Include="Infrastructure\ICommandHandlerFactory.cs" />
+    <Compile Include="Infrastructure\ICommandRepository.cs" />
+    <Compile Include="Infrastructure\IEventRepository.cs" />
+    <Compile Include="Infrastructure\IEventServiceProxy.cs" />
+    <Compile Include="Infrastructure\IEventServiceProxyFactory.cs" />
+    <Compile Include="Infrastructure\IHandlesCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PokerLeagueManager.Common.Commands\PokerLeagueManager.Common.Commands.csproj">
+      <Project>{a466419b-e149-4027-bf0a-b1156f50c67d}</Project>
+      <Name>PokerLeagueManager.Common.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Common.DTO\PokerLeagueManager.Common.DTO.csproj">
+      <Project>{8bd579ae-83b3-417f-8606-cbd9d0e8184a}</Project>
+      <Name>PokerLeagueManager.Common.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Common.Events\PokerLeagueManager.Common.Events.csproj">
+      <Project>{f658c3b6-604d-4e32-b2f6-7078761f32a9}</Project>
+      <Name>PokerLeagueManager.Common.Events</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Common.Utilities\PokerLeagueManager.Common.Utilities.csproj">
+      <Project>{85de34bd-9901-4008-90e6-adbc61401408}</Project>
+      <Name>PokerLeagueManager.Common.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\PokerLeagueManager.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

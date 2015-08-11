@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[GetGamesWithPlayerDto]
+(
+    [DtoId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    [GameId] UNIQUEIDENTIFIER NOT NULL,
+    [PlayerName] VARCHAR(MAX) NOT NULL
+)

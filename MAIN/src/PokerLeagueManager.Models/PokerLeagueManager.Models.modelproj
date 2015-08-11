@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{bc60218f-b06c-4488-b4a9-9b227d7ad0b6}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>PokerLeagueManager.Models</Name>
+    <RootNamespace>PokerLeagueManager.Models</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\PokerLeagueManager.Models.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="PokerLeagueManager.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="PokerLeagueManager.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>PokerLeagueManager.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="PokerLeagueManager.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>PokerLeagueManager.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PokerLeagueManager.Commands.Domain\PokerLeagueManager.Commands.Domain.csproj">
+      <Name>PokerLeagueManager.Commands.Domain</Name>
+      <Project>{d702bdb7-9f99-4509-82af-632689aff7d0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Commands.WCF\PokerLeagueManager.Commands.WCF.csproj">
+      <Name>PokerLeagueManager.Commands.WCF</Name>
+      <Project>{119c1495-34a1-4213-a211-dd2dd707024f}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Common.Commands\PokerLeagueManager.Common.Commands.csproj">
+      <Name>PokerLeagueManager.Common.Commands</Name>
+      <Project>{a466419b-e149-4027-bf0a-b1156f50c67d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Common.DTO\PokerLeagueManager.Common.DTO.csproj">
+      <Name>PokerLeagueManager.Common.DTO</Name>
+      <Project>{8bd579ae-83b3-417f-8606-cbd9d0e8184a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Common.Events\PokerLeagueManager.Common.Events.csproj">
+      <Name>PokerLeagueManager.Common.Events</Name>
+      <Project>{f658c3b6-604d-4e32-b2f6-7078761f32a9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Common.Utilities\PokerLeagueManager.Common.Utilities.csproj">
+      <Name>PokerLeagueManager.Common.Utilities</Name>
+      <Project>{85de34bd-9901-4008-90e6-adbc61401408}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Queries.Core\PokerLeagueManager.Queries.Core.csproj">
+      <Name>PokerLeagueManager.Queries.Core</Name>
+      <Project>{7c0d835a-1cda-41da-b203-b0ee2f17063a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.Queries.WCF\PokerLeagueManager.Queries.WCF.csproj">
+      <Name>PokerLeagueManager.Queries.WCF</Name>
+      <Project>{5fd00aad-1bdf-4499-8fde-a554a796ce28}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\PokerLeagueManager.UI.WPF\PokerLeagueManager.UI.Wpf.csproj">
+      <Name>PokerLeagueManager.UI.Wpf</Name>
+      <Project>{cd9912a6-3828-47d9-8524-45f0fc2cffcf}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

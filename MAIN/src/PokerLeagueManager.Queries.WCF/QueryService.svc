@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="PokerLeagueManager.Queries.WCF.QueryService" CodeBehind="QueryService.svc.cs" %>
